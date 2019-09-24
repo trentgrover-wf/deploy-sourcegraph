@@ -18,15 +18,15 @@ spec:
   # about configuring TLS
   tls:
   - hosts:
-    - h.wk-dev.wdesk.org
+    - sourcegraph.wk-dev.wdesk.org
     secretName: default-ingress-cert
   rules:
   - http:
       paths:
-      - path: /s/sourcegraph
+      - path: /
         backend:
           serviceName: sourcegraph-frontend
           servicePort: 30080
     # If you're using TLS/SSL, uncomment the following line and replace 'sourcegraph.example.com' with the real
     # domain that you want to use for your Sourcegraph instance.
-    host: h.wk-dev.wdesk.org
+    host: sourcegraph.wk-dev.wdesk.org
