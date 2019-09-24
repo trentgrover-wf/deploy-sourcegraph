@@ -12,20 +12,21 @@ metadata:
     app: sourcegraph-frontend
     deploy: sourcegraph
   name: sourcegraph-frontend
+  namespace: workiva
 spec:
   # See the customization guide (../../../docs/configure.md) for information
   # about configuring TLS
-  # tls:
-  # - hosts:
-  #   - sourcegraph.example.com
-  #   secretName: sourcegraph-tls
+  tls:
+  - hosts:
+    - h.wk-dev.wdesk.org
+    secretName: default-ingress-cert
   rules:
   - http:
       paths:
-      - path: /
+      - path: /s/sourcegraph
         backend:
           serviceName: sourcegraph-frontend
           servicePort: 30080
     # If you're using TLS/SSL, uncomment the following line and replace 'sourcegraph.example.com' with the real
     # domain that you want to use for your Sourcegraph instance.
-    # host: sourcegraph.example.com
+    host: h.wk-dev.wdesk.org
