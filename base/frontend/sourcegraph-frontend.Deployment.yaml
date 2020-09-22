@@ -41,7 +41,7 @@ spec:
         - name: PGUSER
           value: sg
         - name: SRC_GIT_SERVERS
-          value: gitserver-0.gitserver:3178
+          value: gitserver-0.gitserver:3178 gitserver-1.gitserver:3178 gitserver-2.gitserver:3178
         # POD_NAME is used by CACHE_DIR
         - name: POD_NAME
           valueFrom:
@@ -85,9 +85,11 @@ spec:
           limits:
             cpu: "2"
             memory: 4G
+            ephemeral-storage: "10Gi"
           requests:
             cpu: "2"
             memory: 2G
+            ephemeral-storage: "1Gi"
         volumeMounts:
         - mountPath: /mnt/cache
           name: cache-ssd
