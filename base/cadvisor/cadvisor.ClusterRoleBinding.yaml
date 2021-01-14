@@ -4,7 +4,8 @@ metadata:
   labels:
     app: cadvisor
     category: rbac
-    deploy: sourcegraph
+    # WORKIVA CHANGE: disable cadvisor
+    # deploy: sourcegraph
     sourcegraph-resource-requires: cluster-admin
     app.kubernetes.io/component: cadvisor
   name: cadvisor
