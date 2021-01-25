@@ -61,7 +61,8 @@ spec:
           requests:
             cpu: 500m
             memory: 6G
-            ephemeral-storage: "10Gi"
+            # WORKIVA CHANGE: Remove storage request
+            # ephemeral-storage: "10Gi"
       securityContext:
         runAsUser: 100
         runAsGroup: 100
