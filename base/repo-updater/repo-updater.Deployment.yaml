@@ -60,7 +60,7 @@ spec:
           requests:
             cpu: "1"
             memory: 500Mi
-      - name: jaeger-agent      
+      - name: jaeger-agent
         image: index.docker.io/sourcegraph/jaeger-agent:3.28.0@sha256:df843bdac4a961bc11cb3f5e963ee8894fe698f1de431906bea34a6ccc959174
         env:
           - name: POD_NAME
