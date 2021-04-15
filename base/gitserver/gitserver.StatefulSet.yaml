@@ -9,7 +9,7 @@ metadata:
     app.kubernetes.io/component: gitserver
   name: gitserver
 spec:
-  replicas: 1
+  replicas: 3
   revisionHistoryLimit: 10
   selector:
     matchLabels:
@@ -41,7 +41,7 @@ spec:
             cpu: "4"
             memory: 8G
           requests:
-            cpu: "4" 
+            cpu: "4"
             memory: 8G
         volumeMounts:
         - mountPath: /data/repos
