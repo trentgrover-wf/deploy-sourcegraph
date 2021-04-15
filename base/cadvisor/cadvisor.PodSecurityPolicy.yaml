@@ -3,7 +3,8 @@ kind: PodSecurityPolicy
 metadata:
   labels:
     app: cadvisor
-    deploy: sourcegraph
+    # WORKIVA CHANGE: disable cadvisor
+    # deploy: sourcegraph
     sourcegraph-resource-requires: cluster-admin
     app.kubernetes.io/component: cadvisor
   name: cadvisor
