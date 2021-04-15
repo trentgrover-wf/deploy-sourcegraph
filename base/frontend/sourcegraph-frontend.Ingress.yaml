@@ -14,13 +14,14 @@ metadata:
     sourcegraph-resource-requires: no-cluster-admin
     app.kubernetes.io/component: frontend
   name: sourcegraph-frontend
+  namespace: workiva
 spec:
   # See the customization guide (../../../docs/configure.md) for information
   # about configuring TLS
-  # tls:
-  # - hosts:
-  #   - sourcegraph.example.com
-  #   secretName: sourcegraph-tls
+  tls:
+  - hosts:
+    - sourcegraph.wk-dev.wdesk.org
+    secretName: default-ingress-cert
   rules:
   - http:
       paths:
@@ -30,4 +31,4 @@ spec:
           servicePort: 30080
     # If you're using TLS/SSL, uncomment the following line and replace 'sourcegraph.example.com' with the real
     # domain that you want to use for your Sourcegraph instance.
-    # host: sourcegraph.example.com
+    host: sourcegraph.wk-dev.wdesk.org
